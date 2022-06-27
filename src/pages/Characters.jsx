@@ -1,10 +1,11 @@
 import { Link } from 'react-router-dom'
+import Spinner from '../components/Spinner'
 
 const Characters = ({ loading, characters }) => {
   return (
-    <div>
+    <div className='grid grid-cols-3'>
       {loading ? (
-        <p>Loading....</p>
+        <Spinner />
       ) : (
         <div>
           {characters.map(character => {
@@ -39,8 +40,8 @@ const Characters = ({ loading, characters }) => {
                     </p>
                   </div>
                 </div>
-                <button className='btn-primary'>
-                  <Link to={`/character/${character.Name}`}>Read More</Link>
+                <button className='btn btn-primary'>
+                  <Link to={`/characters/${character.Name}`}>Read More</Link>
                 </button>
               </div>
             )

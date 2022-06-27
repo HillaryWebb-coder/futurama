@@ -17,18 +17,19 @@ function App () {
     const response = await fetch(url)
     const data = await response.json()
     setCharactersList(data)
+    setLoading(false)
   }
 
   useEffect(() => {
     getCharacters()
 
     return () => {
-      setLoading(false)
+      // setLoading(false)
     }
   }, [])
 
   return (
-    <div className='container'>
+    <div className='container mx-auto'>
       <BrowserRouter>
         <Header />
         <Routes>

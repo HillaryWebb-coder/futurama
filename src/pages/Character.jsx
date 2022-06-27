@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { FaAngleLeft } from 'react-icons/fa'
+import Spinner from '../components/Spinner'
 
 const Character = () => {
   let params = useParams()
@@ -13,19 +14,18 @@ const Character = () => {
       const response = await fetch(url)
       const data = await response.json()
       setCharacter(data[0])
+      setLoading(false)
     }
 
     getCharacter()
 
-    return () => {
-      setLoading(false)
-    }
+    return () => {}
   }, [params.charactername])
 
   return (
     <div>
       {Loading ? (
-        <p>Loading....</p>
+        <Spinner />
       ) : (
         <div>
           <div>

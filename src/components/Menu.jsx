@@ -9,7 +9,7 @@ const Menu = () => {
   return (
     <nav>
       {showMenu ? (
-        <ul className='w-full p-5 pt-20 h-screen fixed top-0 left-0 z-50 backdrop-blur-sm bg-amber-800/30'>
+        <ul className='w-full p-5 pt-20 h-screen fixed top-0 left-0 z-50 backdrop-blur-lg bg-amber-800/80'>
           <svg
             className='w-6 h-6 ml-auto mr-10 mb-6'
             fill='none'
@@ -27,10 +27,12 @@ const Menu = () => {
               d='M6 18L18 6M6 6l12 12'
             ></path>
           </svg>
-          <li className='p-3 text-center'>
+          <li className='p-3 text-center text-white text-xl font-semibold'>
             <Link to='/characters'>Characters</Link>
           </li>
-          <li className='p-3 text-center'>Quotes</li>
+          <li className='p-3 text-center text-white text-xl font-semibold'>
+            Quotes
+          </li>
           <Search />
         </ul>
       ) : (
