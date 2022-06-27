@@ -3,20 +3,23 @@ import Spinner from '../components/Spinner'
 
 const Characters = ({ loading, characters }) => {
   return (
-    <div className='grid grid-cols-3'>
+    <div>
       {loading ? (
         <Spinner />
       ) : (
-        <div>
+        <div className='grid md:grid-cols-3'>
           {characters.map(character => {
             return (
-              <div key={character.Name} className='m-5 shadow-md p-5'>
+              <div
+                key={character.Name}
+                className='m-5 rounded-lg overflow-hidden shadow-lg flex flex-col justify-between'
+              >
                 <img
                   src={character.PicUrl}
                   alt={character.Name}
-                  className='mx-auto mb-5'
+                  className='mx-auto mb-5 h-56 w-full object-contain'
                 />
-                <div>
+                <div className='p-5'>
                   <h4>
                     <span className='text-amber-500'>Name: </span>
                     {character.Name}
@@ -40,9 +43,12 @@ const Characters = ({ loading, characters }) => {
                     </p>
                   </div>
                 </div>
-                <button className='btn btn-primary'>
-                  <Link to={`/characters/${character.Name}`}>Read More</Link>
-                </button>
+                <Link
+                  to={`/characters/${character.Name}`}
+                  className='w-3/4 mx-auto'
+                >
+                  <button className='btn btn-primary w-full'>Read More</button>
+                </Link>
               </div>
             )
           })}

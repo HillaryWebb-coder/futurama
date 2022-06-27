@@ -3,8 +3,8 @@ import FuturamaImage from '../assets/futurama.jpg'
 
 const Home = () => {
   return (
-    <div className='bg-amber-200 flex flex-col-reverse md:flex-row md:w-full items-center'>
-      <div className='w-1/2 p-5'>
+    <div className='bg-amber-200 flex flex-col-reverse md:flex-row w-full items-center'>
+      <div className='md:w-1/2 p-5'>
         <h1 className='text-3xl font-bold text-secondary'>
           Futurama TV Series
         </h1>
@@ -18,7 +18,7 @@ const Home = () => {
           </button>
         </div>
       </div>
-      <img src={FuturamaImage} alt='Futurama' className='w-1/2' />
+      <img src={FuturamaImage} alt='Futurama' className='md:w-1/2' />
     </div>
   )
 }

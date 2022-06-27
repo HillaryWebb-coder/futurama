@@ -1,7 +1,7 @@
 const Search = () => {
   return (
     <div className='mx-2'>
-      <form className='w-full flex items-center mx-aut0 rounded-full mt-3'>
+      <form className='w-full flex items-center mx-aut0 rounded-full mt-3 border border-amber-500'>
         <input
           type='text'
           name='search'

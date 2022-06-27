@@ -7,11 +7,21 @@ const Menu = () => {
   const [showMenu, setShowMenu] = useState(false)
 
   return (
-    <nav>
+    <nav className='md:w-3/4'>
+      <div className='hidden md:flex justify-between items-center'>
+        <ul className='flex justify-between text-secondary text-xl font-semibold'>
+          <li className='p-3 text-center '>
+            <Link to='/characters'>Characters</Link>
+          </li>
+          <li className='p-3 text-center '>Quotes</li>
+        </ul>
+        <Search />
+      </div>
+
       {showMenu ? (
         <ul className='w-full p-5 pt-20 h-screen fixed top-0 left-0 z-50 backdrop-blur-lg bg-amber-800/80'>
           <svg
-            className='w-6 h-6 ml-auto mr-10 mb-6'
+            className='w-9 h-9 ml-auto mr-10 mb-6 text-white'
             fill='none'
             stroke='currentColor'
             viewBox='0 0 24 24'
@@ -37,7 +47,7 @@ const Menu = () => {
         </ul>
       ) : (
         <svg
-          className='w-6 h-6'
+          className='w-6 h-6 md:hidden'
           fill='none'
           stroke='currentColor'
           viewBox='0 0 24 24'

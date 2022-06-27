@@ -80,9 +80,9 @@ const Character = () => {
               </p>
             </div>
           </div>
-          <div className='text-amber-500 sticky bottom-0 py-2 px-4 bg-white'>
-            <Link to='/characters' className='flex items-center'>
-              <FaAngleLeft />
+          <div className='text-amber-500 sticky bottom-0 py-2 px-4 bg-white text-xl'>
+            <Link to='/characters' className='flex items-center font-semibold'>
+              <FaAngleLeft className='text-3xl' />
               Back
             </Link>
           </div>
