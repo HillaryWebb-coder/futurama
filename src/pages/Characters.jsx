@@ -1,10 +1,31 @@
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Spinner from '../components/Spinner'
 
-const Characters = ({ loading, characters }) => {
+const Characters = () => {
+  const [Loading, setLoading] = useState(true)
+  const [characters, setCharacters] = useState([])
+
+  const url = 'https://futuramaapi.herokuapp.com/api/v2/characters'
+
+  const getCharacters = async () => {
+    const response = await fetch(url)
+    const data = await response.json()
+    setCharacters(data)
+    setLoading(false)
+  }
+
+  useEffect(() => {
+    getCharacters()
+
+    return () => {
+      // setLoading(false)
+    }
+  }, [])
+
   return (
     <div>
-      {loading ? (
+      {Loading ? (
         <Spinner />
       ) : (
         <div className='grid md:grid-cols-3'>
