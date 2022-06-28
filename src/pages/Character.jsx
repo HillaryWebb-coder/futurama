@@ -32,7 +32,7 @@ const Character = () => {
             <img
               src={character.PicUrl}
               alt={character.Name}
-              className='w-full'
+              className='w-full object-contain h-96'
             />
             <h2 className='text-2xl text-center mt-5 mb-5 uppercase text-amber-700 font-semibold'>
               {character.Name}
