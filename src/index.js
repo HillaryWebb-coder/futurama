@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import './index.css'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
-import { HashRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 import Characters from './pages/Characters'
 import Home from './pages/Home'
@@ -13,15 +13,15 @@ const root = ReactDOM.createRoot(document.getElementById('root'))
 
 root.render(
   <React.StrictMode>
-    <HashRouter>
+    <BrowserRouter>
       <Routes>
-        <Route path='/' element={<App />}>
+        <Route path='/futurama' element={<App />}>
           <Route index element={<Home />} />
-          <Route path='/characters' element={<Characters />} />
-          <Route path='/characters/:charactername' element={<Character />} />
+          <Route path='characters' element={<Characters />} />
+          <Route path='characters/:charactername' element={<Character />} />
         </Route>
       </Routes>
-    </HashRouter>
+    </BrowserRouter>
   </React.StrictMode>
 )
 
