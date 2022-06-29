@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+
 import Spinner from '../components/Spinner'
+import Button from '../components/Button'
 
 const Characters = () => {
   const [Loading, setLoading] = useState(true)
@@ -68,7 +70,7 @@ const Characters = () => {
                   to={`/characters/${character.Name}`}
                   className='w-3/4 mx-auto'
                 >
-                  <button className='btn btn-primary w-full'>Read More</button>
+                  <Button type='primary'>Read More</Button>
                 </Link>
               </div>
             )
