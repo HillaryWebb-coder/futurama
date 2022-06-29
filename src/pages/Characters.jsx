@@ -65,7 +65,7 @@ const Characters = () => {
                   </div>
                 </div>
                 <Link
-                  to={`/futurama/characters/${character.Name}`}
+                  to={`/characters/${character.Name}`}
                   className='w-3/4 mx-auto'
                 >
                   <button className='btn btn-primary w-full'>Read More</button>

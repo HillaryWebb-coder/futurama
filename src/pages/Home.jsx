@@ -11,10 +11,10 @@ const Home = () => {
         <p className='p-4 text-amber-900'>Wiki Created by Fan</p>
         <div className='text-lg md:flex gap-5'>
           <button className='btn btn-secondary'>
-            <Link to='/futurama/characters'>Characters</Link>
+            <Link to='/characters'>Characters</Link>
           </button>
           <button className='btn btn-secondary'>
-            <Link to='/futurama/quotes'>Quotes</Link>
+            <Link to='/quotes'>Quotes</Link>
           </button>
         </div>
       </div>

@@ -1,13 +1,23 @@
-import './App.css'
+import './assets/main.css'
 import Header from './components/Header'
-import { Outlet } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+
+import Characters from './pages/Characters'
+import Home from './pages/Home'
+import Character from './pages/Character'
 
 function App () {
   return (
-    <div className='container mx-auto'>
-      <Header />
-      <Outlet />
-    </div>
+    <BrowserRouter>
+      <div className='container mx-auto'>
+        <Header />
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/characters' element={<Characters />} />
+          <Route path='/characters/:charactername' element={<Character />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   )
 }
 
